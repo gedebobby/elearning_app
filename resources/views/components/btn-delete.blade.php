@@ -1,0 +1,1 @@
+<button type="submit" class="btn btn-sm btn-danger d-inline text-white btn-delete"><i class="fas fa-trash"></i></button>
