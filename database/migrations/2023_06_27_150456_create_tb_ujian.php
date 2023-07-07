@@ -18,6 +18,7 @@ class CreateTbUjian extends Migration
             $table->string('nama_ujian');
             $table->foreignId('id_mapel')->constrained('tb_mapel');
             $table->foreignId('id_kelas')->constrained('tb_kelas');
+            $table->foreignId('id_guru')->constrained('tb_guru');
             $table->date('tgl_mulai');
             $table->time('waktu_mulai');
             $table->time('endtime');

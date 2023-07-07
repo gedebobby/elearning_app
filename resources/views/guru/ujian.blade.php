@@ -14,6 +14,7 @@
           <div class="card p-3 col-lg-6">
             <form action="/ujian" method="POST">
               @csrf
+              <input type="hidden" value="{{session('id_guru')}}" name="id_guru">
               <x-form.input-form type="text" value="" key="nama_ujian" action="add" label="Nama Ujian" />
               <div class="row">
                 <div class="col-lg-6">

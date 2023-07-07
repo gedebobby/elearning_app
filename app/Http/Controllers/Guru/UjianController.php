@@ -63,6 +63,7 @@ class UjianController extends Controller
             'nama_ujian' => $request->nama_ujian,
             'id_mapel' => $request->id_mapel,
             'id_kelas' => $request->id_kelas,
+            'id_guru' => $request->id_guru,
             'tgl_mulai' => $request->tgl_mulai,
             'waktu_mulai' => $request->waktu_mulai,
             'endtime' => $request->waktu,

@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Guru;
 use App\Http\Controllers\Controller;
 use App\Models\Kelas;
 use App\Models\Mapel;
+use App\Models\Materi;
 use App\Models\Siswa;
 use App\Models\Tugas;
+use App\Models\Ujian;
 use App\Models\UserModel;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
@@ -25,6 +27,8 @@ class DashboardControllerGuru extends Controller
         $data['siswa6B'] = Siswa::where('id_kelas', 2)->count();
         $data['siswa6C'] = Siswa::where('id_kelas', 3)->count();
         $data['countTugas'] = Tugas::where('id_guru', Session('id_guru'))->count();
+        $data['countUjian'] = Ujian::where('id_guru', Session('id_guru'))->count();
+        $data['countMateri'] = Materi::where('id_guru', Session('id_guru'))->count();
         $data['countKelas'] = Kelas::get()->count();
         $user = UserModel::where('id', Session('idUser'))->first();
         if ($user->password == "12345678") {

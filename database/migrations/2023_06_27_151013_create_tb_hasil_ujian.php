@@ -15,9 +15,12 @@ class CreateTbHasilUjian extends Migration
     {
         Schema::create('tb_hasil_ujian', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_siswa')->constrained('tb_siswa');
-            $table->foreignId('id_soal')->constrained('tb_soal');
-            $table->foreignId('id_ujian')->constrained('tb_ujian');
+            $table->foreignId('id_siswa')->constrained('tb_siswa')->onUpdate('cascade')
+            ->onDelete('cascade');
+            $table->foreignId('id_soal')->constrained('tb_soal')->onUpdate('cascade')
+            ->onDelete('cascade');
+            $table->foreignId('id_ujian')->constrained('tb_ujian')->onUpdate('cascade')
+            ->onDelete('cascade');
             $table->string('jawaban')->default(null);
             $table->timestamps();
         });
