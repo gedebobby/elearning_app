@@ -20,7 +20,7 @@ class CreateTbUjian extends Migration
             $table->foreignId('id_kelas')->constrained('tb_kelas');
             $table->date('tgl_mulai');
             $table->time('waktu_mulai');
-            $table->time('waktu_selesai');
+            $table->time('endtime');
             $table->string('waktu');
             $table->boolean('status')->default('0');
             $table->timestamps();
