@@ -33,7 +33,7 @@ class ProfileRequest extends FormRequest
     {
         return [
             'oldPassword.required' => 'Password Lama Wajib diisi',
-            'oldPassword.required' => 'Password Baru Wajib diisi',
+            'newPassword.required' => 'Password Baru Wajib diisi',
             'newPassword.min' => 'Password minimal 8 karakter',
             'newPassword.min' => 'Password minimal 8 karakter',
         ];

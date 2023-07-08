@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="_token" content="{{csrf_token()}}" />
-  <link href="{{ url('') }}/assets/img/logo/logo.png" type="image/x-icon" rel="icon shortcut">
+  {{-- <link href="{{ url('') }}/assets/img/logo/logo.png" type="image/x-icon" rel="icon shortcut"> --}}
   {{-- <link href="{{ url('/assets/img/logo/logo.png') }}" type="image/x-icon" rel="icon"> --}}
   <title>{{$title}}</title>
   <link href="{{ url('') }}/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -16,7 +16,10 @@
   <link href="{{ url('') }}/assets/css/ruang-admin.min.css" rel="stylesheet">
   {{-- <link href="{{ url('') }}/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet"> --}}
   {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha256-aAr2Zpq8MZ+YA/D6JtRD3xtrwpEz2IqOS+pWD/7XKIw=" crossorigin="anonymous" /> --}}
-  
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ url('') }}/assets/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url('') }}/assets/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ url('') }}/assets/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="{{ url('') }}/assets/img/favicon/site.webmanifest">
 </head>
 
 <body id="page-top">

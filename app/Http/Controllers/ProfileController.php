@@ -6,6 +6,7 @@ use App\Http\Requests\ProfileRequest;
 use App\Models\UserModel;
 use App\Traits\Message;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class ProfileController extends Controller
 {
@@ -68,6 +69,7 @@ class ProfileController extends Controller
         ];
 
         UserModel::where('id', $user->id)->update($data);
+        
         return $this->addSuccess($url);
     }
 
