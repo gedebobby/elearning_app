@@ -11,7 +11,7 @@
           <a href="/tugas" class="btn btn-danger text-white" type="button"><i class="fas fa-fw fa-arrow-left"></i><span>Back</span></a>
         </div>
           <div class="card p-3 col-lg-6">
-            <form action="/tugas/{{$tugas->id}}" method="POST">
+            <form action="/tugas/{{$tugas->id}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <x-form.input-form type="text" value="{{$tugas->nama_tugas}}" key="nama_tugas" action="add" label="Nama Tugas" />
@@ -57,6 +57,13 @@
                               <x-error-validation input="waktu" />
                           </div>
                       </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input @error('file_tugas') is-invalid @enderror" name="file_tugas" id="customFile">
+                        <label class="custom-file-label" for="customFile">{{$tugas->file_tugas}}</label>
+                        <x-error-validation input="file_tugas" />
+                    </div>
                   </div>
                   <div class="form-group">
                     <label for="keterangan">Keterangan</label>

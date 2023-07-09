@@ -30,7 +30,8 @@ class TugasRequest extends FormRequest
             // 'id_guru' => 'required',
             'keterangan' => 'required',
             'tanggal' => 'required',
-            'waktu' => 'required'
+            'waktu' => 'required',
+            'file_tugas' => 'mimes:csv,txt,xlsx,pdf,doc,docx,rar,zip,ppt,pptx|nullable'
         ];
     }
 

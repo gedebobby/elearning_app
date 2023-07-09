@@ -12,7 +12,7 @@
         </div>
         <div class="collapse show px-3 mb-3" id="addMateri">
           <div class="card p-3 col-lg-6">
-            <form action="/tugas" method="POST">
+            <form action="/tugas" method="POST" enctype="multipart/form-data">
               @csrf
               <x-form.input-form type="text" value="" key="nama_tugas" action="add" label="Nama Tugas" />
               <div class="row">
@@ -57,6 +57,13 @@
                             <x-error-validation input="waktu" />
                         </div>
                     </div>
+                </div>
+                <div class="form-group">
+                  <div class="custom-file">
+                      <input type="file" class="custom-file-input @error('file_tugas') is-invalid @enderror" name="file_tugas" id="customFile">
+                      <label class="custom-file-label" for="customFile">Pilih file</label>
+                      <x-error-validation input="file_tugas" />
+                  </div>
                 </div>
                 <div class="form-group">
                   <label for="keterangan">Keterangan</label>

@@ -30,6 +30,7 @@ class TugasController extends Controller
         
     }
 
+
     public function create()
     {
         //
@@ -43,15 +44,30 @@ class TugasController extends Controller
      */
     public function store(TugasRequest $request)
     {
-        $data = [
-            'nama_tugas' => $request->nama_tugas,
-            'id_mapel' => $request->id_mapel,
-            'id_kelas' => $request->id_kelas,
-            'id_guru' => $request->id_guru,
-            'keterangan' => $request->keterangan,
-            'batas_tgl'=> $request->tanggal,
-            'batas_waktu'=> $request->waktu
-        ];
+        $file = $request->file('file_tugas');
+        if ($request->hasFile('file_tugas')) {
+            $data = [
+                'nama_tugas' => $request->nama_tugas,
+                'id_mapel' => $request->id_mapel,
+                'id_kelas' => $request->id_kelas,
+                'id_guru' => $request->id_guru,
+                'keterangan' => $request->keterangan,
+                'batas_tgl'=> $request->tanggal,
+                'batas_waktu'=> $request->waktu,
+                'file_tugas' => $file->getClientOriginalName()
+            ];
+            Storage::putFileAs('tugas_store', $file, $file->getClientOriginalName());
+        } else {
+            $data = [
+                'nama_tugas' => $request->nama_tugas,
+                'id_mapel' => $request->id_mapel,
+                'id_kelas' => $request->id_kelas,
+                'id_guru' => $request->id_guru,
+                'keterangan' => $request->keterangan,
+                'batas_tgl'=> $request->tanggal,
+                'batas_waktu'=> $request->waktu
+            ];
+        }
 
         // return dd($data);
         Tugas::create($data);
@@ -140,16 +156,35 @@ class TugasController extends Controller
         } else {
             $status = 1;
         }
-        $data = [
-            'nama_tugas' => $request->nama_tugas,
-            'id_mapel' => $request->id_mapel,
-            'id_kelas' => $request->id_kelas,
-            // 'id_guru' => $request->id_guru,
-            'keterangan' => $request->keterangan,
-            'batas_tgl'=> $request->tanggal,
-            'batas_waktu'=> $request->waktu,
-            'status' => $status
-        ];
+
+        $file = $request->file('file_tugas');
+        $tugas = Tugas::find($id);
+        if ($request->hasFile('file_tugas')) {
+            $data = [
+                'nama_tugas' => $request->nama_tugas,
+                'id_mapel' => $request->id_mapel,
+                'id_kelas' => $request->id_kelas,
+                'id_guru' => $request->id_guru,
+                'keterangan' => $request->keterangan,
+                'batas_tgl'=> $request->tanggal,
+                'batas_waktu'=> $request->waktu,
+                'status' => $status,
+                'file_tugas' => $file->getClientOriginalName()
+            ];
+            // Storage::move('tugas_store/'.$tugas->file_name, 'tugas_deleted/');
+            Storage::putFileAs('tugas_store', $file, $file->getClientOriginalName());
+        } else {
+            $data = [
+                'nama_tugas' => $request->nama_tugas,
+                'id_mapel' => $request->id_mapel,
+                'id_kelas' => $request->id_kelas,
+                'id_guru' => $request->id_guru,
+                'keterangan' => $request->keterangan,
+                'batas_tgl'=> $request->tanggal,
+                'batas_waktu'=> $request->waktu,
+                'status' => $status
+            ];
+        }
 
         Tugas::where('id', $id)->update($data);
         

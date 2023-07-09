@@ -19,6 +19,14 @@
             <h5>Kelas : {{$tugas->kelas->kelas}}</h5>
             <h5>Mata Pelajaran : {{$tugas->mapel->mapel}}</h5>
             <hr>
+            <div class="download">
+                @if ($tugas->file_tugas == null)
+                
+                @else
+                <a href="/tugas/download/{{$tugas->file_tugas}}"><i class="fas fa-fw fa-download"></i> {{$tugas->file_tugas}}</a>
+                @endif
+              </div>
+              <hr>
             <div>
               <h4>@php
                 echo strip_tags($tugas->keterangan)
