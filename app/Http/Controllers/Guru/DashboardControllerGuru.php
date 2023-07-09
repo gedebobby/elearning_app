@@ -33,6 +33,8 @@ class DashboardControllerGuru extends Controller
         $user = UserModel::where('id', Session('idUser'))->first();
         if ($user->password == "12345678") {
             $data['checkPass'] = false;
+        } else {
+            $data['checkPass'] = true;
         }
         return view('guru.dashboard', $data);
     }
