@@ -13,7 +13,7 @@
         </div>
         <div class="row">
             <div class="col-xl-3 col-md-6 mb-4">
-            <a href="/listsiswa/1" class="text-decoration-none">
+            <a href="/listsiswa/5" class="text-decoration-none">
                 <div class="card h-100">
                     <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -30,7 +30,7 @@
             </a>
             </div>
             <div class="col-xl-3 col-md-6 mb-4">
-            <a href="/listsiswa/2" class="text-decoration-none">
+            <a href="/listsiswa/6" class="text-decoration-none">
                 <div class="card h-100">
                     <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -47,7 +47,7 @@
             </a>
             </div>
             <div class="col-xl-3 col-md-6 mb-4">
-            <a href="/listsiswa/2" class="text-decoration-none">
+            <a href="/listsiswa/7" class="text-decoration-none">
                 <div class="card h-100">
                     <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -81,7 +81,7 @@
             </a>
             </div>
             <div class="col-xl-3 col-md-6 mb-4">
-            <a href="/tugas" class="text-decoration-none">
+            <a href="/ujian" class="text-decoration-none">
                 <div class="card h-100">
                     <div class="card-body">
                     <div class="row no-gutters align-items-center">
@@ -98,7 +98,7 @@
             </a>
             </div>
             <div class="col-xl-3 col-md-6 mb-4">
-            <a href="/tugas" class="text-decoration-none">
+            <a href="/materi" class="text-decoration-none">
                 <div class="card h-100">
                     <div class="card-body">
                     <div class="row no-gutters align-items-center">

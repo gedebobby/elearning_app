@@ -23,9 +23,9 @@ class DashboardControllerGuru extends Controller
     public function index()
     {
         $data['title'] = 'Dashboard';
-        $data['siswa6A'] = Siswa::where('id_kelas', 1)->count();
-        $data['siswa6B'] = Siswa::where('id_kelas', 2)->count();
-        $data['siswa6C'] = Siswa::where('id_kelas', 3)->count();
+        $data['siswa6A'] = Siswa::where('id_kelas', 5)->count();
+        $data['siswa6B'] = Siswa::where('id_kelas', 6)->count();
+        $data['siswa6C'] = Siswa::where('id_kelas', 7)->count();
         $data['countTugas'] = Tugas::where('id_guru', Session('id_guru'))->count();
         $data['countUjian'] = Ujian::where('id_guru', Session('id_guru'))->count();
         $data['countMateri'] = Materi::where('id_guru', Session('id_guru'))->count();
