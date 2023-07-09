@@ -30,11 +30,12 @@ Route::middleware(['isLogin'])->group(function () {
     // Route::get('home', 'HomeController@index');
     
     Route::resource('profile', ProfileController::class);
+    Route::post('/changePassword', [ProfileController::class, 'changePassword']);
     
     Route::middleware(['isAdmin'])->group(function(){
         
         // Admin 
-        Route::post('changePassword/{$iduser}', [ProfileController::class, 'changePassword']);
+        // Route::post('/changePassword', [ProfileController::class, 'changePassword']);
         Route::resource('siswa', SiswaController::class);
         Route::resource('kelas', KelasController::class);
         Route::resource('mapel', MapelController::class);
@@ -59,7 +60,7 @@ Route::middleware(['isLogin'])->group(function () {
         Route::post('/tugas/nilaitugas', [TugasController::class, 'nilaiTugas']);
 
 
-        Route::post('changePassword/{$iduser}', [ProfileController::class, 'changePassword']);
+        // Route::post('changePassword/{$iduser}', [ProfileController::class, 'changePassword']);
         
         // -ujian
         Route::get('/ujian/soal/{idujian}', [UjianController::class, 'soal']);
@@ -77,10 +78,10 @@ Route::middleware(['isLogin'])->group(function () {
         Route::get('/student/ujian/{idujian}', [SiswaDashboardController::class, 'showSoal']);
         Route::post('/student/ujian/{idujian}', [SiswaDashboardController::class, 'storeUjian']);
         Route::get('/student/tugas/{id}', [SiswaDashboardController::class, 'showDetailTugas']);
-        Route::post('/changePassword', [ProfileController::class, 'changePassword']);
         Route::get('/student/hasil', [SiswaDashboardController::class, 'hasilUjian']);
     });
-
+    
+    Route::post('/changePassword', [ProfileController::class, 'changePassword']);
     Route::group(['middleware' => 'isAssigned'], function () {
         Route::get('/student/ujian/{idujian}', [SiswaDashboardController::class, 'showSoal']);
     });
