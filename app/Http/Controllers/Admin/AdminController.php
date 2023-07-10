@@ -18,7 +18,7 @@ class AdminController extends Controller
      */
     public function index(Request $request)
     {
-        $data['title'] = 'Dashboard';
+        $data['title'] = 'Beranda';
         $data['countSiswa'] = Siswa::get()->count();
         $data['countGuru'] = Guru::get()->count();
         $data['countMapel'] = Mapel::get()->count();

@@ -42,7 +42,7 @@
             <a class="nav-link" href="{{ url('student')}}">
         @endif
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></a>
+          <span>Beranda</span></a>
       </li>
       <hr class="sidebar-divider">
       @if (Session()->has('role') && ( Session('role') == 'admin' ))

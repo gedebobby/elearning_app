@@ -22,7 +22,7 @@ class DashboardControllerGuru extends Controller
      */
     public function index()
     {
-        $data['title'] = 'Dashboard';
+        $data['title'] = 'Beranda';
         $data['siswa6A'] = Siswa::where('id_kelas', 1)->count();
         $data['siswa6B'] = Siswa::where('id_kelas', 2)->count();
         $data['siswa6C'] = Siswa::where('id_kelas', 3)->count();
