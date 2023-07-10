@@ -15,7 +15,11 @@
               @csrf
               @method('PUT')
                 <x-form.input-form type="text" action="update" key="nama_siswa" label="Nama Siswa" :data="$siswa" />
-                <x-form.input-form type="text" action="update" key="nis" label="NIS" :data="$siswa" />
+                <div class="form-group">
+                  <label for="nis">nis</label>
+                  <input type="hidden" value="{{$siswa->nis}}" name="nis">
+                  <input type="text" class="form-control" disabled id="nis" name='nis' placeholder="Masukkan nis" value="{{$siswa->nis}}">
+              </div>
                 <div class="form-group">
                   <label for="kelas">Kelas</label>
                   <select class="form-control custom-select @error('id_kelas') is-invalid @enderror" name='id_kelas' id="kelas">

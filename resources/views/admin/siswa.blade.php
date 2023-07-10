@@ -59,7 +59,7 @@
                 <td>{{$std->kelas->kelas}}</td>
                 <td>{{$std->nis}}</td>
                 <td>
-                  <a href="siswa/{{$std->id_kelas}}" class="btn btn-warning btn-sm text-white">
+                  <a href="siswa/{{$std->id}}" class="btn btn-warning btn-sm text-white">
                       <i class="fas fa-edit"></i></a>
                   <form action="/siswa/{{$std->id}}" class="d-inline" method="post">
                     @csrf

@@ -8,6 +8,7 @@ use App\Traits\Message;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SiswaRequest;
 use App\Models\Kelas;
+use App\Models\Siswa;
 
 class SiswaController extends Controller
 {
@@ -65,7 +66,8 @@ class SiswaController extends Controller
     public function show($id)
     {
         $data['title'] = 'Edit Siswa';
-        $data['siswa'] = $this->siswaRepository->getSiswaByID($id);
+        $data['siswa'] = Siswa::where('id', $id)->first();
+        // $data['siswa'] = $this->siswaRepository->getSiswaByID($id);
         $data['kelas'] = Kelas::get();
         return view('Admin.updateView.updateSiswa', $data);
     }
