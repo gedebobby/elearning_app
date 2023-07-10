@@ -188,7 +188,6 @@ class TugasController extends Controller
 
         Tugas::where('id', $id)->update($data);
         
-
         return $this->updateSuccess('tugas');
     }
 

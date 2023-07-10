@@ -20,6 +20,7 @@ class CreateTableTugas extends Migration
             $table->foreignId('id_mapel')->constrained('tb_mapel');
             $table->foreignId('id_guru')->constrained('tb_guru');
             $table->string('keterangan');
+            $table->string('file_tugas');
             $table->date('batas_tgl');
             $table->time('batas_waktu');
             $table->boolean('status')->default('1');
