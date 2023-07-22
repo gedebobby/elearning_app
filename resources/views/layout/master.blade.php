@@ -36,7 +36,7 @@
       <li class="nav-item">
         @if (Session()->has('role') && ( Session('role') == 'admin' ))
           <a class="nav-link" href="{{ url('dashboard')}}">
-          @elseif(Session()->has('role') && ( Session('role') == 'guru' ))
+          @elseif(Session()->has('role') && ( Session('role') == 'guru' || Session('role')=='wali' ))
           <a class="nav-link" href="{{ url('dashboardguru')}}">
           @elseif(Session()->has('role') && ( Session('role') == 'siswa' ))
             <a class="nav-link" href="{{ url('student')}}">
@@ -76,7 +76,7 @@
       </li>
       <hr class="sidebar-divider">
       @endif
-      @if (Session()->has('role') && ( Session('role') == 'guru' ))
+      @if (Session()->has('role') && ( Session('role') == 'guru' || Session('role') == 'wali' ))
       <div class="sidebar-heading">
         Menu Guru
       </div>

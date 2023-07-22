@@ -22,6 +22,14 @@
               @method('PUT')
                 <x-form.input-form type="text" action="update" key="nama_guru" label="Nama Guru" :data="$guru" />
                 <x-form.input-form type="text" action="update" key="nip" label="NIP" :data="$guru" />
+                <div class="form-group">
+                  <select class="form-control custom-select @error('role_guru') is-invalid @enderror" name='role_guru' id="kelas">
+                    <option value="">Pilih Role Guru</option>
+                        <option value="wali">Wali</option>
+                        <option value="guru">Guru</option>
+                  </select>
+                  <x-error-validation input="role_guru" />
+                </div>
                 <x-btn-submit title="Update" />
                 <hr>
           </form>

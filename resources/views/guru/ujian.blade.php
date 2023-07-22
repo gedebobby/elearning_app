@@ -22,9 +22,11 @@
                         <label for="mapel">Mata Pelajaran</label>
                         <select class="form-control custom-select @error('id_mapel') is-invalid @enderror" name='id_mapel' id="mapel">
                             <option value="">Pilih Mapel</option>
-                          @foreach ($mapel as $std)
-                            <option {{ old('id_mapel') == $std->id ? "selected" : "" }} value="{{ $std->id }}" >{{$std->mapel}}</option>
-                          @endforeach
+                            @foreach ($mapel as $std)
+                              @foreach ($std->tb_mapel_guru as $m)
+                              <option {{ old('id_mapel') == $m->id ? "selected" : "" }} value="{{ $m->id }}" >{{$m->mapel}}</option>
+                              @endforeach
+                            @endforeach
                         </select>
                         <x-error-validation input="id_mapel" />
                       </div> 

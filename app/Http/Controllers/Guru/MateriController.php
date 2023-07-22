@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Guru;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MateriRequest;
+use App\Models\Guru;
 use App\Models\Kelas;
 use App\Models\Mapel;
 use App\Models\Materi;
 use App\Traits\Message;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -21,9 +23,9 @@ class MateriController extends Controller
         $data['title'] = 'Materi';
         $data['materi'] = Materi::where('id_guru', Session('id_guru'))->with('mapel', 'kelas', 'guru')->get();
         $data['kelas'] = Kelas::get();
-        $data['mapel'] = Mapel::get();
+        $data['mapel'] = Guru::where('id', Session('id_guru'))->with(['tb_mapel_guru'])->get();
         return view('guru.materi', $data);
-        // return Materi::with('mapel', 'kelas', 'guru')->get();
+        // return Guru::where('id', Session('id_guru'))->with(['tb_mapel_guru'])->get();
     }
 
     public function showMateri()
@@ -80,7 +82,7 @@ class MateriController extends Controller
         $data['title'] = 'Edit Materi';
         $data['materi'] = Materi::find($id);
         $data['kelas'] = Kelas::get();
-        $data['mapel'] = Mapel::get();
+        $data['mapel'] = Guru::where('id', Session('id_guru'))->with(['tb_mapel_guru'])->get();
         return view('admin.updateView.updateMateri', $data);
     }
 

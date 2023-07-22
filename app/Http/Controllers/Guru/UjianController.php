@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\SoalRequest;
 use App\Http\Requests\UjianRequest;
 use App\Jobs\setStatusUjian;
+use App\Models\Guru;
 use App\Models\HasilUjian;
 use App\Models\Kelas;
 use App\Models\Mapel;
@@ -27,7 +28,7 @@ class UjianController extends Controller
     public function index()
     {
         $data['title'] = 'Ujian';
-        $data['mapel'] = Mapel::get();
+        $data['mapel'] = Guru::where('id', Session('id_guru'))->with(['tb_mapel_guru'])->get();
         $data['kelas'] = Kelas::get();
         $data['ujian'] = Ujian::with('mapel', 'kelas')->get();
 
@@ -109,7 +110,7 @@ class UjianController extends Controller
     public function show($id)
     {
         $data['title'] = 'Edit Ujian';
-        $data['mapel'] = Mapel::get();
+        $data['mapel'] = Guru::where('id', Session('id_guru'))->with(['tb_mapel_guru'])->get();
         $data['kelas'] = Kelas::get();
         $data['ujian'] = Ujian::find( $id);
 

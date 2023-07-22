@@ -23,11 +23,6 @@ class CreateTableUser extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('tb_user');

@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\GuruRequest;
 use App\Models\Guru;
+use App\Models\Mapel;
+use App\Models\MapelGuru;
 use App\Traits\Message;
 
 class GuruController extends Controller
@@ -60,12 +62,18 @@ class GuruController extends Controller
         return $this->addSuccess();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    public function storeGuruMapel(Request $request){
+
+        for ($i=0; $i < count($request->id_mapel); $i++) { 
+            $data[] = array(
+                'id_guru' => $request->id_guru,
+                'id_mapel' => $request->id_mapel[$i]
+            );
+        }
+        MapelGuru::insert($data);
+        return $this->addSuccess();
+    }
+
     public function show($id)
     {
         $data['title'] = 'Edit Guru';
@@ -73,24 +81,18 @@ class GuruController extends Controller
         return view('Admin.updateView.updateGuru', $data);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    public function showSetGuruMapel($id){
+        $data['title'] = 'Set Guru Mata Pelajaran';
+        $data['guru'] = $this->guruRepository->getGurubyId($id);
+        $data['mapel'] = Mapel::all();
+        return view('Admin.updateView.setGuruMapel', $data);
+    }
+
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(GuruRequest $request, $id)
     {
         $this->guruRepository->updateDataGuru($request, $id);

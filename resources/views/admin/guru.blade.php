@@ -17,6 +17,14 @@
           @csrf
           <x-form.input-form type="text" value="" key="nama_guru" action="add" label="Nama Guru" :guru="$guru" />
           <x-form.input-form type="text" value="" key="nip" action="add" label="NIP" :guru="$guru" />
+          <div class="form-group">
+            <select class="form-control custom-select @error('role_guru') is-invalid @enderror" name='role_guru' id="kelas">
+              <option value="">Pilih Role Guru</option>
+                  <option value="wali">Wali</option>
+                  <option value="guru">Guru</option>
+            </select>
+            <x-error-validation input="role_guru" />
+          </div>
           <x-btn-submit title="Tambah" />
           <hr>
         </form>
@@ -30,9 +38,10 @@
           <thead class="thead-light">
             <tr role="row">
               <th class="sorting_asc" tabindex="0" aria-controls="dataTableHover" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" >No</th>
-              <th class="sorting" tabindex="0" aria-controls="dataTableHover" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 576.448px;">Nama</th>
-              <th class="sorting" tabindex="0" aria-controls="dataTableHover" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 297.812px;">NIK</th>
-              <th class="sorting" tabindex="0" aria-controls="dataTableHover" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 145.615px;">Opsi</th>
+              <th class="sorting" tabindex="0" aria-controls="dataTableHover" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending">Nama</th>
+              <th class="sorting" tabindex="0" aria-controls="dataTableHover" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending">NIK</th>
+              <th class="sorting" tabindex="0" aria-controls="dataTableHover" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Role</th>
+              <th class="sorting" tabindex="0" aria-controls="dataTableHover" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Opsi</th>
             </tr>
           </thead>
           {{-- <tfoot>
@@ -47,7 +56,10 @@
               <td class="sorting_1">{{$i++}}</td>
               <td>{{$std->nama_guru}}</td>
               <td>{{$std->nip}}</td>
-              <td>
+              <td>{{$std->role_guru}}</td>
+              <td class="d-inline">
+                <a href="guru/set-mapel/{{$std->id}}" class="btn btn-success btn-sm text-white">
+                    <i class="fas fa-book"></i></a>
                 <a href="guru/{{$std->id}}" class="btn btn-warning btn-sm text-white">
                     <i class="fas fa-edit"></i></a>
                 {{-- <a href="guru/{{$std->id}}" class="btn btn-sm btn-danger text-white">

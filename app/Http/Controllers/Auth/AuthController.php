@@ -52,7 +52,7 @@ class AuthController extends Controller
 
             if (Session('role') == 'admin') {
                 return redirect()->intended('admin');
-            } elseif (Session('role') == 'guru') {
+            } elseif (Session('role') == 'guru' || Session('role') == 'wali') {
                 $request->session()->put('id_guru', $guru->id);
                 return redirect()->intended('dashboardguru');
             } elseif (Session('role') == 'siswa') {

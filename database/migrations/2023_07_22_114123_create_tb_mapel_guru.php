@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGuruTable extends Migration
+class CreateTbMapelGuru extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateGuruTable extends Migration
      */
     public function up()
     {
-        Schema::create('tb_guru', function (Blueprint $table) {
+        Schema::create('tb_mapel_guru', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_guru');
-            $table->string('nip')->unique();
-            $table->string('role_guru');
+            $table->foreignId('id_guru')->constrained('tb_guru');
+            $table->foreignId('id_mapel')->constrained('tb_mapel');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateGuruTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('guru');
+        Schema::dropIfExists('tb_mapel_guru');
     }
 }

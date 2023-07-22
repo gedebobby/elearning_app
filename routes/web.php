@@ -40,6 +40,8 @@ Route::middleware(['isLogin'])->group(function () {
         Route::resource('kelas', KelasController::class);
         Route::resource('mapel', MapelController::class);
         Route::resource('guru', GuruController::class);
+        Route::get('/guru/set-mapel/{id}', [GuruController::class, 'showSetGuruMapel']);
+        Route::post('/guru/set-mapel-guru', [GuruController::class, 'storeGuruMapel']);
         Route::get('/dashboard', [AdminController::class, 'index']);
         Route::get('/admin', [AdminController::class, 'index']);
         // Admin & Guru
@@ -50,6 +52,8 @@ Route::middleware(['isLogin'])->group(function () {
 
     Route::middleware(['isGuru'])->group(function () {
         Route::get('/dashboardguru', [DashboardControllerGuru::class, 'index']);
+        Route::get('/dashboard-detail', [DashboardControllerGuru::class, 'dashboardDetail']);
+        Route::get('/kelas-detail', [DashboardControllerGuru::class, 'kelasDetail']);
         Route::get('/listsiswa/{idkelas}', [DashboardControllerGuru::class, 'dataSiswa']);
         Route::resource('materi', MateriController::class);
         Route::resource('tugas', TugasController::class);

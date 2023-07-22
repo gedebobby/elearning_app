@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Guru;
 
 use App\Http\Controllers\Controller;
+use App\Models\Guru;
 use App\Models\Kelas;
 use App\Models\Mapel;
 use App\Models\Materi;
@@ -22,13 +23,22 @@ class DashboardControllerGuru extends Controller
      */
     public function index()
     {
-        $data['title'] = 'Beranda';
-        $data['siswa6A'] = Siswa::where('id_kelas', 1)->count();
-        $data['siswa6B'] = Siswa::where('id_kelas', 2)->count();
-        $data['siswa6C'] = Siswa::where('id_kelas', 3)->count();
-        $data['countTugas'] = Tugas::where('id_guru', Session('id_guru'))->count();
-        $data['countUjian'] = Ujian::where('id_guru', Session('id_guru'))->count();
-        $data['countMateri'] = Materi::where('id_guru', Session('id_guru'))->count();
+        
+        $user = UserModel::where('id', Session('idUser'))->first();
+        $data['title'] = 'Beranda Guru';
+        if ($user->password == "12345678") {
+            $data['checkPass'] = false;
+        } else {
+            $data['checkPass'] = true;
+        }
+        
+        return view('guru.dashboard', $data);
+    }
+
+    public function dashboardDetail(){
+
+        $data['title'] = 'Detail Beranda Guru';
+        $data['kelas'] = Kelas::all();
         $data['countKelas'] = Kelas::get()->count();
         $user = UserModel::where('id', Session('idUser'))->first();
         if ($user->password == "12345678") {
@@ -36,7 +46,22 @@ class DashboardControllerGuru extends Controller
         } else {
             $data['checkPass'] = true;
         }
-        return view('guru.dashboard', $data);
+        return view('guru.dashboardDetail', $data);
+
+        // return Guru::with('tb_mapel_guru')->get();
+    }
+
+    public function kelasDetail(){
+
+        $data['title'] = 'Detail Kelas';
+        $data['kelas'] = Kelas::all();
+        $user = UserModel::where('id', Session('idUser'))->first();
+        if ($user->password == "12345678") {
+            $data['checkPass'] = false;
+        } else {
+            $data['checkPass'] = true;
+        }
+        return view('guru.kelasDetail', $data);
     }
 
     public function dataSiswa($idkelas){

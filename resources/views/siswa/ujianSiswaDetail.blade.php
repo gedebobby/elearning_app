@@ -30,7 +30,7 @@
         @php
             $i = 1;
             @endphp
-        @foreach ($soal as $std)
+        @foreach ($soal as $std) 
         <div class="my-1 mb-3 d-flex flex-row align-items-center justify-content-between">
             <div class="card p-3 w-100">
                 <p>{{$i++}}. {{strip_tags($std->soal)}}</p>

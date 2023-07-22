@@ -22,4 +22,8 @@ class Mapel extends Model
     public function tb_ujian(){
         return $this->hasMany(Ujian::class);
     }
+
+    public function tb_mapel_guru(){
+        return $this->belongsToMany(Guru::class, 'tb_mapel_guru', 'id_mapel', 'id_guru');
+    }
 }

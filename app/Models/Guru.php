@@ -20,8 +20,13 @@ class Guru extends Model
     {
         return $this->hasMany(Materi::class);
     }
+
     public function tb_tugas(){
         return $this->hasMany(Tugas::class);
+    }
+
+    public function tb_mapel_guru(){
+        return $this->belongsToMany(Mapel::class, 'tb_mapel_guru', 'id_guru', 'id_mapel');
     }
 
 }

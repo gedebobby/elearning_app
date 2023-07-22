@@ -17,14 +17,15 @@ class GuruRepository implements GuruRepositoryInterface {
     {
         $data = [
             'nama_guru' => $request->nama_guru,
-            'nip' => $request->nip
+            'nip' => $request->nip,
+            'role_guru' => $request->role_guru
         ];
 
         $user = [
            'name' => $request->nama_guru,
            'username' => $request->nip,
            'password' => '12345678',
-           'role' => 'guru'
+           'role' => $request->role_guru
         ];
 
         Guru::create($data);

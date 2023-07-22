@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Guru;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TugasRequest;
+use App\Models\Guru;
 use App\Models\Kelas;
 use App\Models\Mapel;
 use App\Models\Siswa;
@@ -23,7 +24,7 @@ class TugasController extends Controller
     {
         $data['title'] = 'Tugas';
         $data['kelas'] = Kelas::get();
-        $data['mapel'] = Mapel::get();
+        $data['mapel'] = Guru::where('id', Session('id_guru'))->with(['tb_mapel_guru'])->get();
         $data['tugas'] = Tugas::where('id_guru', Session('id_guru'))->with('mapel', 'kelas', 'guru')->get();
         return view('guru.tugas', $data);
         // return Carbon::now()->format('Y-m-d');
@@ -125,7 +126,7 @@ class TugasController extends Controller
     {
         $data['title'] = 'Tugas';
         $data['kelas'] = Kelas::get();
-        $data['mapel'] = Mapel::get();
+        $data['mapel'] = Guru::where('id', Session('id_guru'))->with(['tb_mapel_guru'])->get();
         $data['tugas'] = Tugas::find($id);
         return view('admin.updateView.updateTugas', $data);
         // return Tugas::find($id);

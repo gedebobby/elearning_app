@@ -18,7 +18,7 @@ class isGuru
     public function handle(Request $request, Closure $next)
     {
         $user = UserModel::where('username', $request->username)->first();
-        if (Session('role') != 'guru') {
+        if (Session('role') != 'guru' && Session('role') != 'wali') {
             return back();
         }
         return $next($request);
