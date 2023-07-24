@@ -26,14 +26,14 @@
                     <label>Mata Pelajaran</label>
                     <input type="hidden" name="id_guru" value="{{$guru->id}}">
                     @foreach ($mapel as $std)
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox"
-                        {{-- @if ($isMapel)
-                            
-                        @endif --}}
-                      class="custom-control-input" value="{{$std->id}}" name="id_mapel[]" id="customCheck2[{{$std->id}}]">
-                      <label class="custom-control-label" for="customCheck2[{{$std->id}}]">{{$std->mapel}}</label>
-                    </div>
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" value="{{$std->id}}" name="id_mapel[]" id="customCheck2[{{$std->id}}]"
+                          @foreach ($mapel_selected as $s)
+                          {{$s->id_mapel == $std->id ? 'checked' : ''}}
+                          @endforeach                        
+                        >
+                        <label class="custom-control-label" for="customCheck2[{{$std->id}}]">{{$std->mapel}}</label>
+                      </div>
                     @endforeach
                   </div>
                 <x-btn-submit title="Update" />

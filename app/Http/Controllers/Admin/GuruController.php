@@ -70,6 +70,12 @@ class GuruController extends Controller
                 'id_mapel' => $request->id_mapel[$i]
             );
         }
+        $mapelguru = MapelGuru::where('id_guru', $request->id_guru);
+        if ($mapelguru) {
+            MapelGuru::where('id_guru', $request->id_guru)->delete();
+        }else{
+            MapelGuru::insert($data);
+        }
         MapelGuru::insert($data);
         return $this->addSuccess();
     }
@@ -85,6 +91,15 @@ class GuruController extends Controller
         $data['title'] = 'Set Guru Mata Pelajaran';
         $data['guru'] = $this->guruRepository->getGurubyId($id);
         $data['mapel'] = Mapel::all();
+        $data['mapel_selected'] = MapelGuru::where('id_guru', $id)->get();
+
+        // $mapel_selected = MapelGuru::where('id_guru', 2)->get();
+
+        // if ($mapel_selected) {
+            
+        // }
+
+        // return MapelGuru::where('id_guru', 1)->get();
         return view('Admin.updateView.setGuruMapel', $data);
     }
 

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileRequest;
+use App\Models\Guru;
+use App\Models\Siswa;
+use App\Models\User;
 use App\Models\UserModel;
 use App\Traits\Message;
 use Illuminate\Http\Request;
@@ -53,7 +56,15 @@ class ProfileController extends Controller
     {
         $data['title'] = 'Ganti Password';
         $data['user'] = UserModel::find($iduser);
-        return view('admin.profile', $data);
+
+        $user = UserModel::select('username')->where('id', $iduser)->first();
+        $data['guru'] = Guru::where('nip', $user->username)->with('tb_mapel_guru')->first();
+        $data['siswa'] = Siswa::where('nis', $user->username)->with('kelas')->first();
+
+        
+        return view('admin.profile', $data); 
+    //    return Guru::where('nip', $user->username)->with('tb_mapel_guru')->first();
+        
     }
 
     public function changePassword(ProfileRequest $request){
