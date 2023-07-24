@@ -25,7 +25,8 @@ class GuruRequest extends FormRequest
     {
         return [
             'nama_guru' => 'required|string',
-            'nip' => 'required'
+            'nip' => 'required',
+            'role_guru' => 'required'
         ];
     }
 
@@ -34,7 +35,8 @@ class GuruRequest extends FormRequest
         return [
             'nama_guru.required' => 'Nama Guru Wajib Diisi',
             'nama_guru.string' => 'Nama Guru harus Berupa Huruf',
-            'nip.required' => 'NIP Wajib diisi'
+            'nip.required' => 'NIP Wajib diisi',
+            'role_guru.required' => 'Role Guru Wajib Dipilih'
         ];
     }
 }

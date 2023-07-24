@@ -41,7 +41,8 @@ class GuruRepository implements GuruRepositoryInterface {
     {
         $data = [
             'nama_guru' => $request->nama_guru,
-            'nip' => $request->nip
+            'nip' => $request->nip,
+            'role_guru' => $request->role_guru
         ];
 
         Guru::where('id', $id)->update($data);

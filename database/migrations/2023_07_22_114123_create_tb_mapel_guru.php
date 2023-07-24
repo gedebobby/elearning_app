@@ -15,8 +15,8 @@ class CreateTbMapelGuru extends Migration
     {
         Schema::create('tb_mapel_guru', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_guru')->constrained('tb_guru');
-            $table->foreignId('id_mapel')->constrained('tb_mapel');
+            $table->foreignId('id_guru')->constrained('tb_guru')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('id_mapel')->constrained('tb_mapel')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

@@ -25,8 +25,8 @@
                 <div class="form-group">
                   <select class="form-control custom-select @error('role_guru') is-invalid @enderror" name='role_guru' id="kelas">
                     <option value="">Pilih Role Guru</option>
-                        <option value="wali">Wali</option>
-                        <option value="guru">Guru</option>
+                        <option {{$guru->role_guru == 'wali' ? 'selected' : ''}} value="wali">Wali</option>
+                        <option {{$guru->role_guru == 'guru' ? 'selected' : ''}} value="guru">Guru</option>
                   </select>
                   <x-error-validation input="role_guru" />
                 </div>
