@@ -17,7 +17,7 @@
                       <div class="card h-100">
                           <div class="card-body">
                           <div class="row no-gutters align-items-center">
-                            <div class="col-6">
+                            <div class="col-3">
                               <i class="fas fa-book fa-2x text-info"></i>
                               </div>
                               <div class="col-auto">
