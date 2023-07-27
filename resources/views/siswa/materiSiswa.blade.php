@@ -12,12 +12,12 @@
         </div>
         <div class="row">
               @foreach ($mapel as $std)
-              <div class="col-xl-3 col-md-6 mb-4">
+              <div class="col-xl-4 col-md-4 mb-4">
                   <a href="/student/materi/{{$std->id}}" class="text-decoration-none text-dark">
                       <div class="card h-100">
                           <div class="card-body">
                           <div class="row no-gutters align-items-center">
-                            <div class="col-3">
+                            <div class="col-6">
                               <i class="fas fa-book fa-2x text-info"></i>
                               </div>
                               <div class="col-auto">
