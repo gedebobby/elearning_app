@@ -19,12 +19,12 @@
                     <div class="card h-100">
                         <div class="card-body">
                         <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-uppercase mb-1">Materi</div>
-                            {{-- <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{$countGuru}}</div> --}}
+                            <div class="col-3">
+                            <i class="fas fa-book fa-2x text-info"></i>
                             </div>
                             <div class="col-auto">
-                            <i class="fas fa-book fa-2x text-info"></i>
+                            <div class="text-xs font-weight-bold text-uppercase mb-1">Materi</div>
+                            {{-- <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{$countGuru}}</div> --}}
                             </div>
                         </div>
                         </div>
@@ -36,12 +36,12 @@
                     <div class="card h-100">
                         <div class="card-body">
                         <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-uppercase mb-1">Tugas</div>
-                            {{-- <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{$countGuru}}</div> --}}
+                            <div class="col-3">
+                            <i class="fas fa-pen fa-2x text-warning"></i>
                             </div>
                             <div class="col-auto">
-                            <i class="fas fa-pen fa-2x text-warning"></i>
+                            <div class="text-xs font-weight-bold text-uppercase mb-1">Tugas</div>
+                            {{-- <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{$countGuru}}</div> --}}
                             </div>
                         </div>
                         </div>
@@ -53,12 +53,12 @@
                     <div class="card h-100">
                         <div class="card-body">
                         <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
+                            <div class="col-3">
+                            <i class="fas fa-clipboard fa-2x text-primary"></i>
+                            </div>                            
+                            <div class="col-auto">
                             <div class="text-xs font-weight-bold text-uppercase mb-1">Ujian</div>
                             {{-- <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{$countGuru}}</div> --}}
-                            </div>
-                            <div class="col-auto">
-                            <i class="fas fa-clipboard fa-2x text-primary"></i>
                             </div>
                         </div>
                         </div>

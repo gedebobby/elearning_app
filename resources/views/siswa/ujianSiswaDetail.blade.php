@@ -20,7 +20,7 @@
             {{-- <p class="my-auto mr-2">Waktu :</p> --}}
             
             <button type="submit" class="btn btn-warning btn-submit-ujian mr-2">Selesai</button>
-            <button type="button" class="btn btn-success mr-2" id="btnShowTime"
+            <button type="button" class="btn btn-success mr-2 d-none" id="btnShowTime"
             data-date="{{$ujian->tgl_mulai}}"    
             data-endtime="{{$ujian->endtime}}"    
             >Lihat Waktu</button>

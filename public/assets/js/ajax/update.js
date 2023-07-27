@@ -70,7 +70,21 @@ $(document).on('click', '#btnShowTime', function(){
     $(this).text(
       event.strftime('%H:%M:%S')
     );
-    $('#btnShowTime').attr('disabled', 'disabled');
+    $('#btnShowTime').addClass('d-none');
+    // $('#btnShowTime').attr('disabled', 'disabled');
   });
   });
 
+
+// $(document).ready(function(){
+//     loadWaktu = (date, endtime) => {
+//         var finaltime = ""+date +" "+endtime;
+//         $(".clock-builder-output").countdown(finaltime, function(event) {
+//             $(this).text(
+//               event.strftime('%H:%M:%S')
+//             );
+//             // $('#btnShowTime').attr('disabled', 'disabled');
+//             console.log(finaltime);
+//         });  
+//     }
+// });

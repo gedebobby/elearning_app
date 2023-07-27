@@ -15,13 +15,13 @@
             <div class="card h-100">
                 <div class="card-body">
                 <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
+                    <div class="col-3">
+                    <i class="fas fa-users fa-2x text-info"></i>
+                    </div>
+                    <div class="col-auto">
                     <div class="text-xs font-weight-bold text-uppercase mb-1">Jumlah Data Guru</div>
                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{$countGuru}}</div>
                     </div>
-                    <div class="col-auto">
-                    <i class="fas fa-users fa-2x text-info"></i>
-                    </div>
                 </div>
                 </div>
             </div>
@@ -30,13 +30,13 @@
             <div class="card h-100">
                 <div class="card-body">
                 <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
+                    <div class="col-3">
+                    <i class="fas fa-graduation-cap fa-2x text-info"></i>
+                    </div>
+                    <div class="col-auto">
                     <div class="text-xs font-weight-bold text-uppercase mb-1">Jumlah Data Siswa Aktif</div>
                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{$countSiswa}}</div>
                     </div>
-                    <div class="col-auto">
-                    <i class="fas fa-graduation-cap fa-2x text-info"></i>
-                    </div>
                 </div>
                 </div>
             </div>
@@ -45,13 +45,13 @@
             <div class="card h-100">
                 <div class="card-body">
                 <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
+                    <div class="col-3">
+                    <i class="fas fa-book fa-2x text-info"></i>
+                    </div>
+                    <div class="col-auto">
                     <div class="text-xs font-weight-bold text-uppercase mb-1">Jumlah Data Mapel</div>
                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{$countMapel}}</div>
                     </div>
-                    <div class="col-auto">
-                    <i class="fas fa-book fa-2x text-info"></i>
-                    </div>
                 </div>
                 </div>
             </div>
@@ -60,12 +60,12 @@
             <div class="card h-100">
                 <div class="card-body">
                 <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                    <div class="text-xs font-weight-bold text-uppercase mb-1">Jumlah Data Kelas</div>
-                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{$countKelas}}</div>
+                    <div class="col-3">
+                    <i class="fas fa-landmark fa-2x text-info"></i>
                     </div>
                     <div class="col-auto">
-                    <i class="fas fa-landmark fa-2x text-info"></i>
+                    <div class="text-xs font-weight-bold text-uppercase mb-1">Jumlah Data Kelas</div>
+                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{$countKelas}}</div>
                     </div>
                 </div>
                 </div>

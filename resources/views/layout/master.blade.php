@@ -188,13 +188,16 @@
   <script type="text/javascript" src="{{ url('assets') }}/js/clock_assets/jquery.countdown.js"></script>
   <script type="text/javascript" src="{{ url('assets') }}/js/clock_assets/jquery.countdown.min.js"></script>
   <script type="text/javascript">
-    
+     
 
   </script>
   <script>
     $(document).ready(function () {
       $('#dataTable').DataTable(); // ID From dataTable 
       $('#dataTableHover').DataTable(); // ID From dataTable with Hover
+    });
+    $( window ).on( "load", function() {
+      $('#btnShowTime').click();
     });
   
   </script>

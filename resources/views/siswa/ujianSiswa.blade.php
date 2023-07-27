@@ -42,9 +42,9 @@
                         <div class="text-lg font-weight-bold text-capitalize mb-1">Waktu : {{$std->waktu}} Menit</div>
                         <div class="text-lg font-weight-bold text-capitalize mb-1">Status : 
                           @if ($statusUjian == 'submited')
-                            <div class="text-lg font-weight-bold text-capitalize mb-1">
+                            {{-- <div class="text-lg font-weight-bold text-capitalize mb-1 bg-dark"> --}}
                               <span class="badge badge-success"> Ujian Sudah Dikerjakan <i class="fas fa-check text-white"></i></span>
-                            </div>
+                            {{-- </div> --}}
                           @else
                             @switch($statusUjian)
                                 @case('ujian-belum-mulai')
