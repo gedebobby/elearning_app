@@ -36,14 +36,21 @@
                     <div class="col-lg-3">
                         <div class="card p-4">
                             <div class="d-flex justify-content-between align-items-center">
-                                <div class="format"><i class="fas fa-fw fa-paperclip"></i> | Link Materi</div>
-                                <div class="link">
+                                <div class="format"><i class="fas fa-fw fa-paperclip"></i> |
+                                    
+                                    @if ($std->link_materi == null)
+                                    Tidak ada Link Materi
+                                    @else
+                                    <a href="{{$std->link_materi}}">{{$std->link_materi}}</a>
+                                    @endif
+                                </div>
+                                {{-- <div class="link">
                                     @if ($std->link_materi == null)
                                     <i class="fas fa-fw fa-link"></i>
                                     @else
                                     <a href="{{$std->link_materi}}"><i class="fas fa-fw fa-link"></i></a>
                                     @endif
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
