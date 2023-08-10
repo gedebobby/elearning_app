@@ -87,7 +87,6 @@ class DashboardController extends Controller
         ->first();
     }
 
-
     public function showUjian(){
         $data['title'] = 'UJIAN';
         $data['ujian'] = Ujian::where('id_kelas', Session('id_kelas'))->with('mapel')->get();
