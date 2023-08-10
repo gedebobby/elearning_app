@@ -11,6 +11,9 @@
           <a href="/student" class="btn btn-danger text-white" type="button"><i class="fas fa-fw fa-arrow-left"></i><span>Back</span></a>
         </div>
         <div class="row">
+          @if ($tugas->count() == 0)
+            <h2 class="p-3">Belum ada tugas</h2>
+          @endif
               @foreach ($tugas as $std)
               <div class="col-xl-6 col-md-12 mb-4">
                       <div class="card h-100">
