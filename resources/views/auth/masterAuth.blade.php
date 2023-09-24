@@ -20,7 +20,13 @@
   <link rel="icon" type="image/png" sizes="16x16" href="{{ url('') }}/assets/img/favicon/favicon-16x16.png">
   <link rel="manifest" href="{{ url('') }}/assets/img/favicon/site.webmanifest">
 </head>
-
+  <!-- <style>
+  body{
+    background-image:url("/assets/img/logo/gambar sekolah.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+  }
+  </style> -->
 <body>
   <div>
     @yield('auth')
