@@ -79,10 +79,10 @@
                 <td>{{$std->opsi_b}}</td>
                 <td>{{$std->opsi_d}}</td>
                 <td>
-                        <a href="ujian/{{$std->id}}" class="btn btn-warning btn-sm text-white">
+                        <a href="/ujian/editSoal/{{$std->id}}" class="btn btn-warning btn-sm text-white">
                           <i class="fas fa-edit"></i>
                         </a>
-                        <form action="/ujian/{{$std->id}}" class="d-inline" method="post">
+                        <form action="/ujian/deleteSoal/{{$std->id}}" class="d-inline" method="post">
                           @csrf
                           @method('DELETE')
                           <x-btn-delete />

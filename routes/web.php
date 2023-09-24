@@ -70,6 +70,9 @@ Route::middleware(['isLogin'])->group(function () {
         Route::get('/ujian/soal/{idujian}', [UjianController::class, 'soal']);
         Route::get('/ujian/hasil/{idujian}/{idkelas}', [UjianController::class, 'hasilUjian']);
         Route::post('/ujian/addsoal', [UjianController::class, 'addSoal']);
+        Route::get('/ujian/editSoal/{idsoal}', [UjianController::class, 'viewUpdateSoal']);
+        Route::post('/ujian/updateSoal/{idsoal}', [UjianController::class, 'updateSoal']);
+        Route::delete('/ujian/deleteSoal/{idsoal}', [UjianController::class, 'deleteSoal']);
     });
 
     Route::middleware(['isStudent'])->group(function() {

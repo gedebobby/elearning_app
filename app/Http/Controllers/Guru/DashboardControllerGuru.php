@@ -65,8 +65,10 @@ class DashboardControllerGuru extends Controller
     }
 
     public function dataSiswa($idkelas){
-        $data['title'] = 'Data Siswa';
-        $data['siswa'] = Siswa::where('id_kelas', $idkelas)->get();
+        $kelas = Kelas::find($idkelas);
+        $siswa = Siswa::where('id_kelas', $idkelas)->get();
+        $data['title'] = 'Data Siswa Kelas ' . $kelas->kelas;
+        $data['siswa'] = $siswa;    
         return view('guru.listSiswa', $data);
     }
     /**

@@ -103,8 +103,34 @@ class UjianController extends Controller
         return view('guru.soalUjian', $data);
     }
 
-    public function import(){
-        
+    public function viewUpdateSoal($idsoal){
+        $data['title'] = 'Edit Soal Ujian';
+        $data['idsoal'] = $idsoal;
+        $data['opsi_jawaban'] = 
+         [
+            ['value' => 'a', 'values'=>'A'],
+            ['value' => 'b', 'values'=>'B'],
+            ['value' => 'c', 'values'=>'C'],
+            ['value' => 'd', 'values'=>'D'],
+        ];
+        // return SoalUjian::all();
+        $data['soal'] = SoalUjian::find($idsoal);
+
+        return view('admin.updateView.updateSoalUjian', $data);
+    }
+
+    public function updateSoal(SoalRequest $request){
+        $data = [
+            'soal' => $request->soal,
+            'opsi_a' => $request->opsi_a,
+            'opsi_b' => $request->opsi_b,
+            'opsi_c' => $request->opsi_c,
+            'opsi_d' => $request->opsi_d,
+            'kunci_jawaban' => $request->kunci_jawaban,
+        ];
+
+        SoalUjian::find($request->id_soal)->update($data);
+        return $this->updateSuccess('ujian');
     }
 
     public function show($id)
@@ -182,4 +208,11 @@ class UjianController extends Controller
         Ujian::find($id)->delete();
         return $this->deleteSuccess('ujian');
     }
+
+    public function deleteSoal($id)
+    {
+        SoalUjian::find($id)->delete();
+        return $this->deleteSuccess('ujian');
+    }
+
 }

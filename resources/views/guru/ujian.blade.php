@@ -44,14 +44,14 @@
                       </div> 
                 </div>
                 <div class="col-lg-6">
-                  <x-form.input-form type="date" value="" key="tgl_mulai" action="add" label="Tanggal Mulai" />
+                  <x-form.input-form type="date" value="" key="tgl_mulai" action="add" label="Tanggal Mulai Ujian" />
                 </div>
                 <div class="col-lg-6">
-                  <x-form.input-form type="time" value="" key="waktu_mulai" action="add" label="Waktu Mulai" />
+                  <x-form.input-form type="time" value="" key="waktu_mulai" action="add" label="Waktu Mulai Ujian" />
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
-                        <label for="mapel">Waktu</label>
+                        <label for="mapel">Durasi Ujian</label>
                         <select class="form-control custom-select @error('waktu') is-invalid @enderror" name='waktu' id="mapel">
                             <option value="">Pilih Waktu</option>
                             <option {{ old('waktu') == '60' ? "selected" : "" }} value="60">60 Menit</option>
@@ -111,7 +111,7 @@
                   @endif
                 </td> --}}
                 <td>
-                  <a href="ujian/soal/{{$std->id}}" class="btn btn-success btn-sm"><i class="fas fa-clipboard-list"></i></a>
+                  <a href="/ujian/soal/{{$std->id}}" class="btn btn-success btn-sm"><i class="fas fa-clipboard-list"></i></a>
                   <a href="ujian/{{$std->id}}" class="btn btn-warning btn-sm text-white"><i class="fas fa-edit"></i></a>
                   <form action="/ujian/{{$std->id}}" class="d-inline" method="post">
                     @csrf

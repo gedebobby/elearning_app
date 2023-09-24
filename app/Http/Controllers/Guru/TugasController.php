@@ -45,6 +45,7 @@ class TugasController extends Controller
      */
     public function store(TugasRequest $request)
     {
+        // return $request->all();
         $file = $request->file('file_tugas');
         if ($request->hasFile('file_tugas')) {
             $data = [
@@ -66,7 +67,8 @@ class TugasController extends Controller
                 'id_guru' => $request->id_guru,
                 'keterangan' => $request->keterangan,
                 'batas_tgl'=> $request->tanggal,
-                'batas_waktu'=> $request->waktu
+                'batas_waktu'=> $request->waktu,
+                'file_tugas' => 'Tidak Ada Tugas'
             ];
         }
 
