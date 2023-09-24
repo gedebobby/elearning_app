@@ -30,7 +30,8 @@
         {{-- <div class="sidebar-brand-icon">
           <img src="img/logo/logo2.png">
         </div> --}}
-        <div class="sidebar-brand-text mx-3">E-Learning</div>
+        <div class="sidebar-brand-text mx-3" style="font-size:25px;">E-Learning</div>
+
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item">
@@ -108,7 +109,7 @@
           <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
-          <h3 class="text-white">SD WERDI SASTRA</h3>
+          <h4 class="text-white">SD WERDI SASTRA</h4>
           <ul class="navbar-nav ml-auto">
            
             <div class="topbar-divider d-none d-sm-block"></div>
@@ -116,7 +117,7 @@
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <img class="img-profile rounded-circle" src="/assets/img/boy.png" style="max-width: 60px">
-                <span class="ml-2 d-none d-lg-inline text-white small">{{Session('name')}}</span>
+                <span class="ml-2 d-none d-lg-inline text-white small"style="font-size:15px;">{{Session('name')}}</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="/profile/{{Session('idUser')}}">
@@ -155,7 +156,7 @@
   <footer class="sticky-footer bg-white">
     <div class="container my-auto">
       <div class="copyright text-center my-auto">
-        <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script> - developed by Rehan & Lorens
+        <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script> - developed by Rehan & L
         </span>
       </div>
     </div>
